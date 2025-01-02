@@ -1,0 +1,15 @@
+name: 'Okteto Validate'
+description: 'Validate okteto manifest files'
+inputs:
+  file:
+    description: "path to the okteto manifest file, if not specified the default path will be used"
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file }}
+
+branding:
+  color: 'green'
+  icon: 'layers'
