@@ -32,6 +32,9 @@ jobs:
   devflow:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: "Validate okteto.yml"
       uses: okteto/validate@latest
 ```
