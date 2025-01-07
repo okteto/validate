@@ -4,11 +4,15 @@ inputs:
   file:
     description: "path to the okteto manifest file, if not specified the default path will be used"
     required: false
+  log-level:
+    description: "Log level string. Valid options are debug, info, warn, error"
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.file }}
+    - ${{ inputs.log-level }}
 
 branding:
   color: 'green'
